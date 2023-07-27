@@ -1,0 +1,945 @@
+window.HackSettings = {
+  log: false,
+  ExecDelay: 0,
+  lastExec: 0,
+  Xray: { //done
+      enabled: false,
+      draw: true,
+      opacity: 0.3,
+      key: "KeyF"
+  },
+  AutoSpike: { //done
+      enabled: false,
+      extra: 15,
+      mode: true,
+      canSend: true,
+      delay: 300, //this is for mode 0
+      lastSend: 0,
+      draw: true,
+      key: "KeyX",
+      changeModeKey: "KeyZ",
+      preferences: [
+          "Reidite Spike",
+          "Amethyst Spike",
+          "Diamond Spike",
+          "Gold Spike",
+          "Stone Spike",
+          "Wood Spike",
+          "Wood Wall",
+          "Nothing",
+      ],
+  },
+  DropSword: { //done
+      enabled: false,
+      draw: true,
+      key: "KeyV"
+  },
+  ColoredSpikes: { //done
+      enabled: true,
+      draw: false,
+  },
+  ListEnabledHacks: { //useless
+      enabled: true,
+      draw: false
+  },
+  BarTimers: { // done
+      enabled: true,
+      draw: false,
+  },
+};
+
+window.ReiditeSpikeAlly = new Image;
+window.ReiditeSpikeAlly.src = "https://raw.githubusercontent.com/sfagasdzdgfhs/spikes/main/day-reidite-spike-ally.png"
+window.AmethystSpikeAlly = new Image;
+window.AmethystSpikeAlly.src = "https://raw.githubusercontent.com/sfagasdzdgfhs/spikes/main/day-amethyst-spike-ally.png"
+window.DiamondSpikeAlly = new Image;
+window.DiamondSpikeAlly.src = "https://raw.githubusercontent.com/sfagasdzdgfhs/spikes/main/day-diamond-spike-ally.png"
+window.GoldSpikeAlly = new Image;
+window.GoldSpikeAlly.src = "https://raw.githubusercontent.com/sfagasdzdgfhs/spikes/main/day-gold-spike-ally.png"
+window.StoneSpikeAlly = new Image;
+window.StoneSpikeAlly.src = "https://raw.githubusercontent.com/sfagasdzdgfhs/spikes/main/day-stone-spike-ally.png"
+window.WoodSpikeAlly = new Image;
+window.WoodSpikeAlly.src = "https://raw.githubusercontent.com/sfagasdzdgfhs/spikes/main/day-wood-spike-ally.png"
+
+window.ReiditeSpikeEnemy = new Image;
+window.ReiditeSpikeEnemy.src = "https://raw.githubusercontent.com/sfagasdzdgfhs/spikes/main/day-reidite-spike-enemy.png"
+window.AmethystSpikeEnemy = new Image;
+window.AmethystSpikeEnemy.src = "https://raw.githubusercontent.com/sfagasdzdgfhs/spikes/main/day-amethyst-spike-enemy.png"
+window.DiamondSpikeEnemy = new Image;
+window.DiamondSpikeEnemy.src = "https://raw.githubusercontent.com/sfagasdzdgfhs/spikes/main/day-diamond-spike-enemy.png"
+window.GoldSpikeEnemy = new Image;
+window.GoldSpikeEnemy.src = "https://raw.githubusercontent.com/sfagasdzdgfhs/spikes/main/day-gold-spike-enemy.png"
+window.StoneSpikeEnemy = new Image;
+window.StoneSpikeEnemy.src = "https://raw.githubusercontent.com/sfagasdzdgfhs/spikes/main/day-stone-spike-enemy.png"
+window.WoodSpikeEnemy = new Image;
+window.WoodSpikeEnemy.src = "https://raw.githubusercontent.com/sfagasdzdgfhs/spikes/main/day-wood-spike-enemy.png"
+
+window.ReiditeSpikeDoorAlly = new Image;
+window.ReiditeSpikeDoorAlly.src = "https://raw.githubusercontent.com/sfagasdzdgfhs/spikes/main/day-reidite-spike-door-ally.png"
+window.AmethystSpikeDoorAlly = new Image;
+window.AmethystSpikeDoorAlly.src = "https://raw.githubusercontent.com/sfagasdzdgfhs/spikes/main/day-amethyst-spike-door-ally.png"
+window.DiamondSpikeDoorAlly = new Image;
+window.DiamondSpikeDoorAlly.src = "https://raw.githubusercontent.com/sfagasdzdgfhs/spikes/main/day-diamond-spike-door-ally.png"
+window.GoldSpikeDoorAlly = new Image;
+window.GoldSpikeDoorAlly.src = "https://raw.githubusercontent.com/sfagasdzdgfhs/spikes/main/day-gold-spike-door-ally.png"
+window.StoneSpikeDoorAlly = new Image;
+window.StoneSpikeDoorAlly.src = "https://raw.githubusercontent.com/sfagasdzdgfhs/spikes/main/day-stone-spike-door-ally.png"
+window.WoodSpikeDoorAlly = new Image;
+window.WoodSpikeDoorAlly.src = "https://raw.githubusercontent.com/sfagasdzdgfhs/spikes/main/day-wood-spike-door-ally.png"
+
+window.ReiditeSpikeDoorEnemy = new Image;
+window.ReiditeSpikeDoorEnemy.src = "https://raw.githubusercontent.com/sfagasdzdgfhs/spikes/main/day-reidite-spike-door-enemy.png"
+window.AmethystSpikeDoorEnemy = new Image;
+window.AmethystSpikeDoorEnemy.src = "https://raw.githubusercontent.com/sfagasdzdgfhs/spikes/main/day-amethyst-spike-door-enemy.png"
+window.DiamondSpikeDoorEnemy = new Image;
+window.DiamondSpikeDoorEnemy.src = "https://raw.githubusercontent.com/sfagasdzdgfhs/spikes/main/day-diamond-spike-door-enemy.png"
+window.GoldSpikeDoorEnemy = new Image;
+window.GoldSpikeDoorEnemy.src = "https://raw.githubusercontent.com/sfagasdzdgfhs/spikes/main/day-gold-spike-door-enemy.png"
+window.StoneSpikeDoorEnemy = new Image;
+window.StoneSpikeDoorEnemy.src = "https://raw.githubusercontent.com/sfagasdzdgfhs/spikes/main/day-stone-spike-door-enemy.png"
+window.WoodSpikeDoorEnemy = new Image;
+window.WoodSpikeDoorEnemy.src = "https://raw.githubusercontent.com/sfagasdzdgfhs/spikes/main/day-wood-spike-door-enemy.png"
+
+window.ReiditeDoorAlly = new Image;
+window.ReiditeDoorAlly.src = "https://raw.githubusercontent.com/XmreLoux/images/main/door_reidite2.png"
+window.AmethystDoorAlly = new Image;
+window.AmethystDoorAlly.src = "https://raw.githubusercontent.com/XmreLoux/images/main/door_amethyst1.png"
+window.DiamondDoorAlly = new Image;
+window.DiamondDoorAlly.src = "https://raw.githubusercontent.com/XmreLoux/images/main/door_diamond2.png"
+window.GoldDoorAlly = new Image;
+window.GoldDoorAlly.src = "https://raw.githubusercontent.com/XmreLoux/images/main/door_gold2.png"
+window.StoneDoorAlly = new Image;
+window.StoneDoorAlly.src = "https://raw.githubusercontent.com/XmreLoux/images/main/door_stone1.png"
+window.WoodDoorAlly = new Image;
+window.WoodDoorAlly.src = "https://raw.githubusercontent.com/XmreLoux/images/main/door_wood2.png"
+
+window.ReiditeDoorEnemy= new Image;
+window.ReiditeDoorEnemy.src = "https://raw.githubusercontent.com/XmreLoux/images/main/door_reidite1.png"
+window.AmethystDoorEnemy = new Image;
+window.AmethystDoorEnemy.src = "https://raw.githubusercontent.com/XmreLoux/images/main/door_amethyst2.png"
+window.DiamondDoorEnemy = new Image;
+window.DiamondDoorEnemy.src = "https://raw.githubusercontent.com/XmreLoux/images/main/door_diamond1.png"
+window.GoldDoorEnemy = new Image;
+window.GoldDoorEnemy.src = "https://raw.githubusercontent.com/XmreLoux/images/main/door_gold1.png"
+window.StoneDoorEnemy = new Image;
+window.StoneDoorEnemy.src = "https://raw.githubusercontent.com/XmreLoux/images/main/door_stone2.png"
+window.WoodDoorEnemy = new Image;
+window.WoodDoorEnemy.src = "https://raw.githubusercontent.com/XmreLoux/images/main/door_wood1.png"
+
+window.player = null;
+window.playerID = null;
+window.instance = null;
+window.inventory = null;
+window.team = [];
+window.world = {
+  units: new Array (101),
+};
+window.gauges = {
+  realhp: 200,
+  l: 1,
+  HPTimer: 0,
+  GaugeTimer: 0
+};
+
+window.serverPublicKey = null;
+
+for (var i = 0; i < window.world.units.length; i++)
+  window.world.units[i] = [];
+
+let ITEMS = {
+  SPIKE: 5,
+  STONE_SPIKE: 12,
+  GOLD_SPIKE: 13,
+  DIAMOND_SPIKE: 14,
+  AMETHYST_SPIKE: 20,
+  REIDITE_SPIKE: 52,
+
+  WOOD_DOOR: 10,
+  STONE_DOOR: 15,
+  GOLD_DOOR: 16,
+  DIAMOND_DOOR: 17,
+  AMETHYST_DOOR: 21,
+  REIDITE_DOOR: 51,
+
+  ROOF: 38,
+
+  WOOD_SPIKE_DOOR: 45,
+  STONE_SPIKE_DOOR: 46,
+  GOLD_SPIKE_DOOR: 47,
+  DIAMOND_SPIKE_DOOR: 48,
+  AMETHYST_SPIKE_DOOR: 49,
+  REIDITE_SPIKE_DOOR: 53
+}
+
+window.ITEMS_TO_CHECK = {
+  SPIKE: 5,
+  STONE_SPIKE: 12,
+  GOLD_SPIKE: 13,
+  DIAMOND_SPIKE: 14,
+  AMETHYST_SPIKE: 20,
+  REIDITE_SPIKE: 52,
+
+  WOOD_DOOR: 10,
+  STONE_DOOR: 15,
+  GOLD_DOOR: 16,
+  DIAMOND_DOOR: 17,
+  AMETHYST_DOOR: 21,
+  REIDITE_DOOR: 51,
+
+  //ROOF: 38,
+
+  WOOD_SPIKE_DOOR: 45,
+  STONE_SPIKE_DOOR: 46,
+  GOLD_SPIKE_DOOR: 47,
+  DIAMOND_SPIKE_DOOR: 48,
+  AMETHYST_SPIKE_DOOR: 49,
+  REIDITE_SPIKE_DOOR: 53
+}
+
+let lastCheck = 0;
+let inventoryHook = 0;
+
+addEventListener("DOMContentLoaded", function () {
+  window.nickname_input = document.getElementById("nickname_input")
+  window.chat_input = document.getElementById('chat_block');
+  console.log(chat_input)
+
+})
+
+
+//grab text decoder method
+
+let old_decoder = TextDecoder.prototype.decode;
+
+TextDecoder.prototype.decode = function (...args) {
+  //console.log("Going to Decode this", args)
+  if (args[0].byteLength === 34) window.serverPublicKey = CryptoJS.enc.Utf8.parse(JSON.parse(old_decoder.call(this, args[0])))
+  return old_decoder.apply(this, args)
+}
+//message that gets decoded is ArrayBuffer(34) so the bytes.byteLength is 34
+
+window.func = {
+  isPlayerHoldingWeapon: (a, b) => {
+      switch(a.right)  {
+          case 34:
+          case 18:
+          case 33:
+          case 15:
+          case 14:
+          case 13:
+          case 12:
+          case 16:
+          case 17:
+              return 2; //spear
+          case 57:
+          case 5:
+          case 6:
+          case 30:
+          case 62:
+          case 9:
+          case 0:
+          case 63:
+          case 19:
+              return 1; //sword
+          case 64:
+          case 65:
+          case 66:
+          case 67:
+          case 68:
+          case 70:
+          case 69:
+              return 3; //bow
+          case 45:
+              if (b) return 4; //super hammer
+          case -1:
+              if (b) return 5; //holds nothing
+
+      };
+      return 0;
+  },
+  join_team: (ui8) => {
+      for (var i = 1; i < ui8.length; i++)
+          window.team.push(ui8[i]);
+      func.updateAllys();
+  },
+  encrypt_message: (message) => {
+      const cipherText = CryptoJS.AES.encrypt(JSON.stringify(message), window.serverPublicKey, {
+          mode: CryptoJS.mode.ECB,
+          padding: CryptoJS.pad.Pkcs7
+      });
+      return cipherText.toString();
+  },
+  new_teammate: (id) => {
+      window.team.push(id)
+      func.updateAllys();
+  },
+  destroy_team: () => {
+      window.team = []
+      func.updateAllys();
+  },
+  exclude_team: (id) => {
+      if (id === window.player.id) {
+          window.team = [];
+      } else {
+          for (var i = 0; i < window.team.length; i++) {
+              if (window.team[i] == id) {
+                  window.team.splice(i, 1);
+                  break;
+              }
+          }
+      }
+
+      func.updateAllys();
+
+  },
+  gather: (ui16) => {
+      var len = ui16.length;
+      var inv = window.inv;
+
+      for (var i = 1; i < len; i += 2) {
+          var o = ui16[i];
+          var n = ui16[i + 1];
+          for (var j = 0; j < window.inventory.length; j++) {
+              if (window.inventory[j].id == o) {
+                  inv[o] += n;
+                  break;
+              }
+          }
+          if (j == window.inventory.length) {
+              inv[o] = n;
+          }
+      }
+  },
+  handshake: (msg) => {
+      //inventoryHook = 0;
+      window.playerID = msg[9]
+      for (var i = 0; i < window.world.units.length; i++)
+          window.world.units[i] = [];
+      window.token_id = msg[12].toString();
+      window.team = msg[8]
+      window.inv = msg[14]
+      window.gauges.realhp = 200;
+      func.updateAllys();
+      window.gauges.HPTimer = new Date().getTime();
+      window.gauges.GaugeTimer = new Date().getTime();
+      sprite[10000] = [WoodSpikeAlly, WoodSpikeAlly];
+      sprite[10001] = [WoodSpikeEnemy, WoodSpikeEnemy];
+
+      sprite[10002] = [StoneSpikeAlly, StoneSpikeAlly];
+      sprite[10003] = [StoneSpikeEnemy, StoneSpikeEnemy];
+
+      sprite[10004] = [GoldSpikeAlly, GoldSpikeAlly];
+      sprite[10005] = [GoldSpikeEnemy, GoldSpikeEnemy];
+
+      sprite[10006] = [DiamondSpikeAlly, DiamondSpikeAlly];
+      sprite[10007] = [DiamondSpikeEnemy, DiamondSpikeEnemy];
+
+      sprite[10008] = [AmethystSpikeAlly, AmethystSpikeAlly];
+      sprite[10009] = [AmethystSpikeEnemy, AmethystSpikeEnemy];
+
+      sprite[10010] = [ReiditeSpikeAlly, ReiditeSpikeAlly];
+      sprite[10011] = [ReiditeSpikeEnemy, ReiditeSpikeEnemy];
+
+
+      sprite[10012] = [WoodSpikeDoorAlly, WoodSpikeDoorAlly];
+      sprite[10013] = [WoodSpikeDoorEnemy, WoodSpikeDoorEnemy];
+
+      sprite[10014] = [StoneSpikeDoorAlly, StoneSpikeDoorAlly];
+      sprite[10015] = [StoneSpikeDoorEnemy, StoneSpikeDoorEnemy];
+
+      sprite[10016] = [GoldSpikeDoorAlly, GoldSpikeDoorAlly];
+      sprite[10017] = [GoldSpikeDoorEnemy, GoldSpikeDoorEnemy];
+
+      sprite[10018] = [DiamondSpikeDoorAlly, DiamondSpikeDoorAlly];
+      sprite[10019] = [DiamondSpikeDoorEnemy, DiamondSpikeDoorEnemy];
+
+      sprite[10020] = [AmethystSpikeDoorAlly, AmethystSpikeDoorAlly];
+      sprite[10021] = [AmethystSpikeDoorEnemy, AmethystSpikeDoorEnemy];
+
+      sprite[10022] = [ReiditeSpikeDoorAlly, ReiditeSpikeDoorAlly];
+      sprite[10023] = [ReiditeSpikeDoorEnemy, ReiditeSpikeDoorEnemy];
+
+      sprite[10024] = [WoodDoorAlly, WoodDoorAlly];
+      sprite[10025] = [WoodDoorEnemy, WoodDoorEnemy];
+
+      sprite[10026] = [StoneDoorAlly, StoneDoorAlly];
+      sprite[10027] = [StoneDoorEnemy, StoneDoorEnemy];
+
+      sprite[10028] = [GoldDoorAlly, GoldDoorAlly];
+      sprite[10029] = [GoldDoorEnemy, GoldDoorEnemy];
+
+      sprite[10030] = [DiamondDoorAlly, DiamondDoorAlly];
+      sprite[10031] = [DiamondDoorEnemy, DiamondDoorEnemy];
+
+      sprite[10032] = [AmethystDoorAlly, AmethystDoorAlly];
+      sprite[10033] = [AmethystDoorEnemy, AmethystDoorEnemy];
+
+      sprite[10034] = [ReiditeDoorAlly, ReiditeDoorAlly];
+      sprite[10035] = [ReiditeDoorEnemy, ReiditeDoorEnemy];
+  },
+  gauges: (life, food, cold, thirst, oxygen, warm, bandage) => {
+      if (Math.floor(11 - (Date.now() - window.gauges.HPTimer) / 1000) < 5 || life / 100 > window.gauges.l) window.gauges.HPTimer = new Date().getTime();
+      window.gauges.GaugeTimer = new Date().getTime();
+      window.gauges.realhp = life * 2;
+      window.gauges.l = life / 100;
+
+  },
+  gauges_life: (life, bandage) => {
+      window.gauges.realhp = life * 2;
+      window.gauges.l = life / 100;
+
+  },
+  checkAlly: (id) => {
+      for (var i = 0; i < window.team.length; i++)
+          if (window.team[i] == id) return 1;
+      return 0
+  },
+  updateAllys: () => {
+      
+      for (var key in ITEMS_TO_CHECK) {
+              for (let item_arr = world.units[Number(ITEMS_TO_CHECK[key])], e = 0; e < item_arr.length; e++) {
+              world.units[Number(ITEMS_TO_CHECK[key])][e].ally = window.playerID === world.units[Number(ITEMS_TO_CHECK[key])][e].pid || func.checkAlly(world.units[Number(ITEMS_TO_CHECK[key])][e].pid)
+          }
+      }
+  },
+  findItem: (id) => {
+      for (var i = 0; i < window.inventory.length; i++) {
+          if (window.inventory[i].id == id)
+              return i;
+      }
+      return -1;
+  }
+}
+
+window.old_send = WebSocket.prototype.send;
+
+
+window.WebSocket = new Proxy(window.WebSocket, {
+  construct(target, args) {
+
+      window.instance = new target(...args);
+      setTimeout(() => {
+          window.instance.send = window.old_send;
+      }, 2000) //to bypass anticheat
+
+      instance.addEventListener("message", function (evt) {
+          if (typeof evt.data == "string") {
+              var msg = JSON.parse(evt.data);
+              switch(msg[0]) {
+                  case 3:
+                      window.func.handshake(msg);
+                  break;
+                  
+                  case 10:
+                      //window.func.gather([0 , msg[1] , msg[2]])
+                  break;
+
+                  case 13:
+                      //killed here
+                  break;
+
+                  case 21:
+                  break;
+              }
+          } else {
+              var ui8 = new Uint8Array(evt.data);
+              switch (ui8[0]) {
+
+                  case 3:
+                      //window.func.gather(new Uint16Array(evt.data));
+                  break;
+
+                  case 16:
+                      window.func.gauges(ui8[1], ui8[2], ui8[3], ui8[4], ui8[5], ui8[6], ui8[7]);
+                  break;
+                  
+                  case 31:
+                      window.func.join_team(ui8);
+                  break;
+                  
+                  case 32:
+                      window.func.exclude_team(ui8[1]);
+                  break;
+
+                  case 33:
+                      window.func.new_teammate(ui8[1]);
+                  break;
+
+                  case 34:
+                      window.func.destroy_team();
+                  break;
+
+                  case 37:
+                      window.func.gauges_life(ui8[1], ui8[2]);
+                  break;
+              }
+          }
+      })
+
+      return instance;
+  },
+});
+let push = Array.prototype.push;
+Array.prototype.push = function(item) {
+  //console.log(item)
+  if (item) {
+      let keys = Object.keys(item);
+      if (keys.length == 5 && keys.includes("draw") && keys.includes("in_button") && item.id !== 32 && item.id !== 130 && item !== 127 && item.id !== 32 && item.id !== 127) console.log(this, item), window.inventory = this;
+  }
+  //if (item && item.info != null && item.trigger != null) window.inventory = this; //fix issue
+  if (item && item.type != null && item.id != null && item.x && item.y) {
+      if (item.type === 0 && item.pid === window.playerID) window.player = item;
+      switch (item.type) {
+          case ITEMS.ROOF: {
+              Object.defineProperty(item, 'opacity', {
+                  value: 0.3,
+                  writable: false
+              })
+          }
+          case ITEMS.SPIKE: {
+              item.ally = window.playerID === item.pid || func.checkAlly(item.pid)
+              let oldDraw = item.draw;
+              item.draw = function (id) {
+                  if (item.ally) {
+                      return oldDraw.apply(this, [10000])
+                  } else {
+                      return oldDraw.apply(this, [10001])
+                  }
+              }
+              break;
+          }
+          case ITEMS.STONE_SPIKE: {
+              item.ally = window.playerID === item.pid || func.checkAlly(item.pid)
+              let oldDraw = item.draw;
+              item.draw = function (id) {
+                  if (item.ally) {
+                      return oldDraw.apply(this, [10002])
+                  } else {
+                      return oldDraw.apply(this, [10003])
+                  }
+              }
+              break;
+          }
+          case ITEMS.GOLD_SPIKE: {
+              item.ally = window.playerID === item.pid || func.checkAlly(item.pid)
+              let oldDraw = item.draw;
+              item.draw = function (id) {
+                  if (item.ally) {
+                      return oldDraw.apply(this, [10004])
+                  } else {
+                      return oldDraw.apply(this, [10005])
+                  }
+              }
+              break;
+          }
+          case ITEMS.DIAMOND_SPIKE: {
+              item.ally = window.playerID === item.pid || func.checkAlly(item.pid)
+              let oldDraw = item.draw;
+              item.draw = function (id) {
+                  if (item.ally) {
+                      return oldDraw.apply(this, [10006])
+                  } else {
+                      return oldDraw.apply(this, [10007])
+                  }
+              }
+              break;
+          }
+          case ITEMS.AMETHYST_SPIKE: {
+              item.ally = window.playerID === item.pid || func.checkAlly(item.pid)
+              let oldDraw = item.draw;
+              item.draw = function (id) {
+                  if (item.ally) {
+                      return oldDraw.apply(this, [10008])
+                  } else {
+                      return oldDraw.apply(this, [10009])
+                  }
+              }
+              break;
+          }
+          case ITEMS.REIDITE_SPIKE: {
+              item.ally = window.playerID === item.pid || func.checkAlly(item.pid)
+              let oldDraw = item.draw;
+              item.draw = function (id) {
+                  if (item.ally) {
+                      return oldDraw.apply(this, [10010])
+                  } else {
+                      return oldDraw.apply(this, [10011])
+                  }
+              }
+              break;
+          }
+
+          case ITEMS.WOOD_DOOR: {
+              item.ally = window.playerID === item.pid || func.checkAlly(item.pid)
+              let oldDraw = item.draw;
+              item.draw = function (id) {
+                  if (item.extra == 0) {
+                      if (item.ally) {
+                          return oldDraw.apply(this, [10024])
+                      } else {
+                          return oldDraw.apply(this, [10025])
+                      }
+                  } else {
+                      return oldDraw.apply(this, arguments)
+                  }
+              }
+              break;
+          }
+          case ITEMS.STONE_DOOR: {
+              item.ally = window.playerID === item.pid || func.checkAlly(item.pid)
+              let oldDraw = item.draw;
+              item.draw = function (id) {
+                  if (item.extra == 0) {
+                      if (item.ally) {
+                          return oldDraw.apply(this, [10026])
+                      } else {
+                          return oldDraw.apply(this, [10027])
+                      }
+                  } else {
+                      return oldDraw.apply(this, arguments)
+                  }
+              }
+              break;
+          }
+          case ITEMS.GOLD_DOOR: {
+              item.ally = window.playerID === item.pid || func.checkAlly(item.pid)
+              let oldDraw = item.draw;
+              item.draw = function (id) {
+                  if (item.extra == 0) {
+                      if (item.ally) {
+                          return oldDraw.apply(this, [10028])
+                      } else {
+                          return oldDraw.apply(this, [10029])
+                      }
+                  } else {
+                      return oldDraw.apply(this, arguments)
+                  }
+              }
+              break;
+          }
+          case ITEMS.DIAMOND_DOOR: {
+              item.ally = window.playerID === item.pid || func.checkAlly(item.pid)
+              let oldDraw = item.draw;
+              item.draw = function (id) {
+                  if (item.extra == 0) {
+                      if (item.ally) {
+                          return oldDraw.apply(this, [10030])
+                      } else {
+                          return oldDraw.apply(this, [10031])
+                      }
+                  } else {
+                      return oldDraw.apply(this, arguments)
+                  }
+              }
+              break;
+          }
+          case ITEMS.AMETHYST_DOOR: {
+              item.ally = window.playerID === item.pid || func.checkAlly(item.pid)
+              let oldDraw = item.draw;
+              item.draw = function (id) {
+
+                  if (item.extra == 0) {
+                      if (item.ally) {
+                          return oldDraw.apply(this, [10032])
+                      } else {
+                          return oldDraw.apply(this, [10033])
+                      }
+                  } else {
+                      return oldDraw.apply(this, arguments)
+                  }
+              }
+              break;
+          }
+          case ITEMS.REIDITE_DOOR: {
+              item.ally = window.playerID === item.pid || func.checkAlly(item.pid)
+              let oldDraw = item.draw;
+              item.draw = function (id) {
+                  if (item.extra == 0) {
+                      if (item.ally) {
+                          return oldDraw.apply(this, [10034])
+                      } else {
+                          return oldDraw.apply(this, [10035])
+                      }
+                  } else {
+                      return oldDraw.apply(this, arguments)
+                  }
+              }
+              break;
+          }
+
+          case ITEMS.WOOD_SPIKE_DOOR: {
+              item.ally = window.playerID === item.pid || func.checkAlly(item.pid)
+              let oldDraw = item.draw;
+              item.draw = function (id) {
+                  if (item.extra == 0) {
+                      if (item.ally) {
+                          return oldDraw.apply(this, [10012])
+                      } else {
+                          return oldDraw.apply(this, [10013])
+                      }
+                  } else {
+                      return oldDraw.apply(this, arguments)
+                  }
+              }
+              break;
+          }
+
+          case ITEMS.STONE_SPIKE_DOOR: {
+              item.ally = window.playerID === item.pid || func.checkAlly(item.pid)
+              let oldDraw = item.draw;
+              item.draw = function (id) {
+                  if (item.extra == 0) {
+                      if (item.ally) {
+                          return oldDraw.apply(this, [10014])
+                      } else {
+                          return oldDraw.apply(this, [10015])
+                      }
+                  } else {
+                      return oldDraw.apply(this, arguments)
+                  }    
+              }
+              break;
+          }
+
+          case ITEMS.GOLD_SPIKE_DOOR: {
+              item.ally = window.playerID === item.pid || func.checkAlly(item.pid)
+              let oldDraw = item.draw;
+              item.draw = function (id) {
+                  if (item.extra == 0) {
+                      if (item.ally) {
+                          return oldDraw.apply(this, [10016])
+                      } else {
+                          return oldDraw.apply(this, [10017])
+                      }
+                  } else {
+                      return oldDraw.apply(this, arguments)
+                  } 
+              }
+              break;
+          }
+
+          case ITEMS.DIAMOND_SPIKE_DOOR: {
+              item.ally = window.playerID === item.pid || func.checkAlly(item.pid)
+              let oldDraw = item.draw;
+              item.draw = function (id) {
+                  if (item.extra == 0) {
+                      if (item.ally) {
+                          return oldDraw.apply(this, [10018])
+                      } else {
+                          return oldDraw.apply(this, [10019])
+                      }
+                  } else {
+                      return oldDraw.apply(this, arguments)
+                  } 
+              }
+              break;
+          }
+
+          case ITEMS.AMETHYST_SPIKE_DOOR: {
+              item.ally = window.playerID === item.pid || func.checkAlly(item.pid)
+              let oldDraw = item.draw;
+              item.draw = function (id) {
+                  if (item.extra == 0) {
+                      if (item.ally) {
+                          return oldDraw.apply(this, [10020])
+                      } else {
+                          return oldDraw.apply(this, [10021])
+                      }
+                  } else {
+                      return oldDraw.apply(this, arguments)
+                  } 
+              }
+              break;
+          }
+
+          case ITEMS.REIDITE_SPIKE_DOOR: {
+              item.ally = window.playerID === item.pid || func.checkAlly(item.pid)
+              let oldDraw = item.draw;
+              item.draw = function (id) {
+                  if (item.extra == 0) {
+                      if (item.ally) {
+                          return oldDraw.apply(this, [10022])
+                      } else {
+                          return oldDraw.apply(this, [10023])
+                      }
+                  } else {
+                      return oldDraw.apply(this, arguments)
+                  } 
+              }
+              break;
+          }
+
+
+      }
+      push.call(window.world.units[item.type], item)
+  }
+  return push.apply(this, arguments)
+}
+
+let splice = Array.prototype.splice;
+Array.prototype.splice = function(start, deleteCount, ...items) {
+  const deletedItems = this.slice(start, start + deleteCount);
+  const item = deletedItems[0]
+
+  /*
+  if (item) {
+      let keys = Object.keys(item);
+      if (keys.length == 5 && keys.includes("draw") && keys.includes("in_button")) window.inventory = this;
+  }
+  */
+
+  //if (item && item.info != null && item.trigger != null) window.inventory = this; //fix issue
+  if (item && item.type != null && item.id != null && item.x && item.y) {
+      //remove it from our world replica
+      var units = window.world.units[item.type];
+
+      
+      for (var j = 0; j < units.length; j++) {
+          if (units[j].uid == item.uid) {
+              splice.call(units, j, 1)
+              break;
+          }
+      }
+  }
+  
+  
+  return splice.apply(this, arguments);
+};
+
+async function cheatInterval () {
+  if (!window.instance || window.instance.readyState !== 1) return;
+
+  if (window.player) {
+      if (HackSettings.AutoSpike.enabled) {
+          for (let e = 0, o = HackSettings.AutoSpike.preferences; e < o.length; e++) {
+              var i = o[e];
+              switch (i) {
+                  case "Reidite Spike":
+                      i = 213;
+                      break;
+                  case "Amethyst Spike":
+                      i = 117;
+                      break;
+                  case "Diamond Spike":
+                      i = 164;
+                      break;
+                  case "Gold Spike":
+                      i = 163;
+                      break;
+                  case "Stone Spike":
+                      i = 162;
+                      break;
+                  case "Wood Spike":
+                      i = 154;
+                      break;
+                  case "Wood Wall":
+                      i = 156;
+                      break;
+                  case "Nothing":
+                      i = -1;
+              }
+              var item = func.findItem(i);
+              if (i !== -1 && item !== -1) {
+                  var type = i;
+                  break;
+              }
+          }
+          if (type) {
+              let pi2 = Math.PI * 2, realAngle = Math.floor((((window.player.angle + pi2) % pi2) * 255) / pi2);
+
+              switch (HackSettings.AutoSpike.mode) {
+                  case false:
+                      if(!window.HackSettings.AutoSpike.canSend) break;
+                      let encrypted_angle = func.encrypt_message(realAngle)
+                      window.instance.send(JSON.stringify([102, type, encrypted_angle, 0]))
+                      window.HackSettings.AutoSpike.lastSend = performance.now();
+                  break;
+                  case true: {
+                      if(!window.HackSettings.AutoSpike.canSend) break;
+                      for (let extra = 0; extra <= HackSettings.AutoSpike.extra; extra += 1) {
+                          let encrypted_angle1 = func.encrypt_message((extra + realAngle) % 255)
+                          let encrypted_angle2 = func.encrypt_message((realAngle - extra + 255) % 255)
+
+                          if (extra <= 2) {
+                              let encrypted_angle = func.encrypt_message(realAngle)
+                              window.instance.send(JSON.stringify([102, type, encrypted_angle, 0]));
+                          }
+                          window.instance.send(JSON.stringify([102, type, encrypted_angle1, 0]))
+                          window.instance.send(JSON.stringify([102, type, encrypted_angle2, 0]))
+                      }
+                      window.HackSettings.AutoSpike.lastSend = performance.now();
+                  }
+                  break;
+              }
+  
+          }
+      }
+
+  }
+}
+
+window.addEventListener("keydown", function (event) {
+  if (event.code === HackSettings.AutoSpike.key && (chat_input.style.display === '' || chat_input.style.display === 'none')) HackSettings.AutoSpike.enabled = true;
+  if (event.code === HackSettings.Xray.key && (chat_input.style.display === '' || chat_input.style.display === 'none')) HackSettings.Xray.enabled = !HackSettings.Xray.enabled;
+
+
+  if (window.instance && window.instance.readyState === 1 && event.code === HackSettings.DropSword.key && (chat_input.style.display === '' || chat_input.style.display === 'none')) {
+      if (window.player) {
+          if(func.isPlayerHoldingWeapon(window.player, false) == 1 || func.isPlayerHoldingWeapon(window.player, false) == 2) {
+              window.instance.send(JSON.stringify([6, window.player.right]))
+          }
+      }
+  }
+})
+
+window.addEventListener("keyup", function (event) {
+  if (event.code === HackSettings.AutoSpike.key && (chat_input.style.display === '' || chat_input.style.display === 'none')) HackSettings.AutoSpike.enabled = false;
+
+})
+
+
+CanvasRenderingContext2D.prototype.drawImage = new Proxy(CanvasRenderingContext2D.prototype.drawImage, {
+  apply: function(target, _this, arguments) {
+      if (HackSettings.Xray.enabled) _this.globalAlpha = HackSettings.Xray.opacity;
+      return Function.prototype.apply.apply(target, [_this, arguments]);
+  }
+});
+
+CanvasRenderingContext2D.prototype.fillRect = new Proxy(CanvasRenderingContext2D.prototype.fillRect, {
+  apply: function(target, _this, arguments) {
+      let date = Date.now();
+      if(_this.fillStyle === "#69a148"){
+          _this.save()
+          _this.font = '34px Baloo Paaji';
+          _this.strokeStyle = "black";
+          _this.fillStyle = "red";
+          _this.lineWidth = 7;
+          _this.strokeText(window.gauges.realhp + "hp", arguments[0] - 120 ,arguments[1] + 20);
+          _this.fillText(window.gauges.realhp + "hp", arguments[0] - 120 ,arguments[1] + 20); 
+          _this.strokeText(Math.floor(11 - (date - window.gauges.HPTimer) / 1000) + "s", arguments[0] + 186, arguments[1] + 20);
+          _this.fillText(Math.floor(11 - (date - window.gauges.HPTimer) / 1000) + "s", arguments[0] + 186, arguments[1] + 20);
+          _this.strokeText(Math.floor(6 - (date - window.gauges.GaugeTimer) / 1000) + "s", arguments[0] + 425 , arguments[1] + 20);
+          _this.fillText(Math.floor(6 - (date - window.gauges.GaugeTimer) / 1000) + "s", arguments[0] + 425 , arguments[1] + 20);
+          _this.restore()
+
+      }
+      return Function.prototype.apply.apply(target, [_this, arguments]);
+  }
+});
+
+
+function checker (timestamp) {
+  requestAnimationFrame(checker);
+  if (timestamp - window.HackSettings.lastExec > window.HackSettings.ExecDelay) {
+      window.HackSettings.log && console.log("Delay: ", Math.floor(timestamp - window.HackSettings.lastExec))
+      cheatInterval();
+      window.HackSettings.lastExec = timestamp;
+  }
+  if (performance.now() - window.HackSettings.AutoSpike.lastSend >= window.HackSettings.AutoSpike.delay) {
+      window.HackSettings.AutoSpike.canSend = true;
+  } else {
+      window.HackSettings.AutoSpike.canSend = false;
+  }
+};
+
+checker(0);
