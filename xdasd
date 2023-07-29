@@ -464,7 +464,7 @@ window.WebSocket = new Proxy(window.WebSocket, {
                   case 33:
                       window.func.new_teammate(ui8[1]);
                   break;
-
+                
                   case 34:
                       window.func.destroy_team();
                   break;
@@ -484,7 +484,7 @@ Array.prototype.push = function(item) {
   //console.log(item)
   if (item) {
       let keys = Object.keys(item);
-      if (keys.length == 5 && keys.includes("draw") && keys.includes("in_button") && item.id !== 32 && item.id !== 130 && item !== 127 && item.id !== 32 && item.id !== 127) console.log(this, item), window.inventory = this;
+      if (keys.length == 5 && keys.includes("draw") && keys.includes("in_button") && item.id !== 32 && item.id !== 130 && item !== 127 && item.id !== 32 && item.id !== 127 && item.id !==4 && item.id !== 25 && item.id !== 34 && item.id !== 87 && item.id !== 103 && item.id !== 104 && item.id !== 107 ) console.log(this, item), window.inventory = this;
   }
   //if (item && item.info != null && item.trigger != null) window.inventory = this; //fix issue
   if (item && item.type != null && item.id != null && item.x && item.y) {
